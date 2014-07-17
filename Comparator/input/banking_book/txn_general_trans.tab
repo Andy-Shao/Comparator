@@ -1,0 +1,41 @@
+1,host_system_id,int,not null
+2,transaction_id,varchar(18),not null
+3,american_european_ind,char(1),null
+4,early_termination,char(3),null
+5,early_termination_date,datetime,null
+6,expiry_date,datetime,null
+7,maturity_date,datetime,null
+8,no_of_principals,smallint,null
+9,put_call_ind,char(1),null
+10,spot_date,datetime,null
+11,start_date,datetime,null
+12,strike_price,float,null
+13,undly_start_date,datetime,null
+14,final_maturity_date,datetime,null
+15,volatility_index_basket,char(20),null
+16,node_3,varchar(16),null
+17,cust_ouc,varchar(6),null
+
+##END!!
+
+SELECT 
+host_system_id , 
+transaction_id , 
+american_european_ind , 
+early_termination , 
+early_termination_date , 
+expiry_date , 
+maturity_date , 
+no_of_principals , 
+put_call_ind , 
+spot_date , 
+start_date , 
+strike_price , 
+undly_start_date , 
+final_maturity_date , 
+volatility_index_basket , 
+node_3 , 
+cust_ouc
+FROM txn_general_trans WHERE host_system_id IN (${handoff_source_id})
+
+##END!!

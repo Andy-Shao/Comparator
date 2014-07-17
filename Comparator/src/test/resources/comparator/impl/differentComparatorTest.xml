@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+			                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+		>
+		<bean id="lineMsgFactory" class="comparator.Md5LineMsgFactory"/>
+		<bean id="comparator" class="comparator.impl.FixLineComparator"
+		 p:regionOneStr="0,16"
+		 p:regionTwoStr="0,16"/>
+		
+		<!-- iteratorA -->
+		<bean id="resourceA" class="org.springframework.core.io.ClassPathResource">
+          <constructor-arg type="java.lang.String" value="comparator/impl/dataA.csv"/>
+        </bean>
+		<bean id="fileInputStreamA" class="java.io.FileInputStream" destroy-method="close">
+		  <constructor-arg type="java.io.File">
+              <bean factory-bean="resourceA" factory-method="getFile"/>
+          </constructor-arg>
+		</bean>
+		<bean id="bufferReaderA" class="java.io.BufferedReader" destroy-method="close">
+		  <constructor-arg type="java.io.Reader">
+		      <bean class="java.io.InputStreamReader">
+		          <constructor-arg type="java.io.InputStream" ref="fileInputStreamA"/>
+		      </bean>
+		  </constructor-arg>
+		</bean>
+		<bean id="readerFileA" class="comparator.impl.ReaderFile"
+		  p:lineMsgFactory-ref="lineMsgFactory"
+		  p:bufferedReader-ref="bufferReaderA"/>
+		  
+		<!-- iteratorB -->
+		<bean id="resourceB" class="org.springframework.core.io.ClassPathResource">
+          <constructor-arg type="java.lang.String" value="comparator/impl/dataB.csv"/>
+        </bean>
+		<bean id="fileInputStreamB" class="java.io.FileInputStream" destroy-method="close">
+		  <constructor-arg type="java.io.File">
+              <bean factory-bean="resourceB" factory-method="getFile"/>
+          </constructor-arg>
+		</bean>
+		<bean id="bufferReaderB" class="java.io.BufferedReader" destroy-method="close">
+		  <constructor-arg type="java.io.Reader">
+		      <bean class="java.io.InputStreamReader">
+		          <constructor-arg type="java.io.InputStream" ref="fileInputStreamB"/>
+		      </bean>
+		  </constructor-arg>
+		</bean>
+		<bean id="readerFileB" class="comparator.impl.ReaderFile"
+		  p:lineMsgFactory-ref="lineMsgFactory"
+		  p:bufferedReader-ref="bufferReaderB"/>
+		
+		<bean id="messageComparator" class="comparator.impl.DifferentComparator"
+		  p:lineMsgComparator-ref="comparator"/>
+</beans>

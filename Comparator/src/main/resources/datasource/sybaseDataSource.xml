@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+			                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+		>
+		
+		<context:property-placeholder location="classpath:datasource/config/ds-sybase-${instance}.properties"
+          system-properties-mode="OVERRIDE"
+          ignore-resource-not-found="true"
+          order="1"/>
+		
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+		  p:initialSize="10"
+		  p:maxActive="50"
+		  p:driverClassName="${jdbc.sybase.driver}"
+		  p:url="${jdbc.sybase.url}"
+		  p:username="${jdbc.sybase.username}"
+		  p:password="${jdbc.sybase.password}"
+		  p:accessToUnderlyingConnectionAllowed="true"
+		  p:connectionProperties="defaultRowPrefetch=10000;"/>
+</beans>

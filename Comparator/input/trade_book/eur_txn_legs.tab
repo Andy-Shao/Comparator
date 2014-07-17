@@ -1,0 +1,77 @@
+1,country,char(2),not null
+2,system_unit_id,int,not null
+3,transaction_id,varchar(18),not null
+4,leg,tinyint,not null
+5,arrears_rate_fix,char(1),null
+6,notional_real_back,char(1),null
+7,notional_real_front,char(1),null
+8,coupon_yield_curve,varchar(4),null
+9,fixed_float_ind,char(2),null
+10,interest_calc_convention,tinyint,null
+11,interest_rate,float,null
+12,leverage,float,null
+13,notional,float,null
+14,notional_ccy,char(3),null
+15,rate_fixing_frequency,smallint,null
+16,ref_rate_ccy,char(3),null
+17,ref_rate_source,char(8),null
+18,ref_rate_tenor,char(3),null
+19,spread,float,null
+20,pse_eq_opt_notional,float,null
+21,commodity_offset,integer,null
+22,commodity_offset_units,integer,null
+23,commodity_descr,varchar(50),null
+24,notional_units,varchar(25),null
+25,notional_time_units,integer,null
+26,pse_notional,float,null
+27,no_of_cash_flow,integer,null
+28,reset_freq,integer,null
+29,no_of_resets,integer,null
+30,no_of_amortisations,integer,null
+31,annualised_notional_amount,float,null
+32,original_notional,float,null
+33,sr_base_netting_ind,char(1),null
+34,settlement_type,char(1),null
+
+##END!!
+
+SELECT 
+leg.country , 
+leg.system_unit_id , 
+leg.transaction_id , 
+leg.leg , 
+leg.arrears_rate_fix , 
+leg.notional_real_back , 
+leg.notional_real_front , 
+leg.coupon_yield_curve , 
+leg.fixed_float_ind , 
+leg.interest_calc_convention , 
+leg.interest_rate , 
+leg.leverage , 
+leg.notional , 
+leg.notional_ccy , 
+leg.rate_fixing_frequency , 
+leg.ref_rate_ccy , 
+leg.ref_rate_source , 
+leg.ref_rate_tenor , 
+leg.spread , 
+leg.pse_eq_opt_notional , 
+leg.commodity_offset , 
+leg.commodity_offset_units , 
+leg.commodity_descr , 
+leg.notional_units , 
+leg.notional_time_units , 
+leg.pse_notional , 
+leg.no_of_cash_flow , 
+leg.reset_freq , 
+leg.no_of_resets , 
+leg.no_of_amortisations , 
+leg.annualised_notional_amount , 
+leg.original_notional , 
+leg.sr_base_netting_ind,
+leg.settlement_type
+FROM eur_transactions tr, eur_txn_legs leg 
+WHERE tr.transaction_id=leg.transaction_id AND tr.system_unit_id=leg.system_unit_id AND deleted IS NULL 
+AND tr.handoff_source_id IN (${handoff_source_id})
+
+##END!!

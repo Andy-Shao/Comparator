@@ -1,0 +1,22 @@
+1,host_system_id,int,not null
+2,transaction_id,varchar(18),not null
+3,handoff_source_id,int,not null
+4,leg_no,tinyint,not null
+5,rate_reset_date,datetime,not null
+6,actual_reset_date,datetime,not null
+7,interest_rate,float,not null)
+
+##END!!
+
+SELECT 
+host_system_id , 
+transaction_id , 
+handoff_source_id , 
+leg_no , 
+rate_reset_date , 
+actual_reset_date , 
+interest_rate
+FROM ce_txn_rate_resets
+WHERE handoff_source_id IN (${handoff_source_id})
+
+##END!!

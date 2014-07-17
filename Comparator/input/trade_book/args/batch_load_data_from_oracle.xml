@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+			                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	    <util:map id="filePathes" key-type="java.lang.String" value-type="java.lang.String">
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_Attribute.sql"             value="${TRADING_BOOK_OUTPUT}/transaction_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_LEGS.sql"                  value="${TRADING_BOOK_OUTPUT}/legs_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_BALANCES.sql"              value="${TRADING_BOOK_OUTPUT}/balances_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_AMORTISATIONS.sql"         value="${TRADING_BOOK_OUTPUT}/amortisations_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_COMPOUNDINGS.sql"          value="${TRADING_BOOK_OUTPUT}/compoundings_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_DAILY_RATE_RESETS.sql"     value="${TRADING_BOOK_OUTPUT}/daily_rate_resets_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_FX_RATE_RESETS.sql"        value="${TRADING_BOOK_OUTPUT}/fx_rate_resets_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_FEES.sql"                  value="${TRADING_BOOK_OUTPUT}/fees_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_SETTLEMENTS.sql"           value="${TRADING_BOOK_OUTPUT}/settlements_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_RATE_RESETS.sql"           value="${TRADING_BOOK_OUTPUT}/rate_resets_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_COLLATERAL.sql"            value="${TRADING_BOOK_OUTPUT}/collateral_oracle.csv"/>
+	       <entry key="${TRADING_BOOK_INPUT}/TRNX_DERIV_CANCELLATIONS.sql"         value="${TRADING_BOOK_OUTPUT}/cancellations_oracle.csv"/>
+	    </util:map>
+</beans>

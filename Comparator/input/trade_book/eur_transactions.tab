@@ -1,0 +1,280 @@
+1,country,char(2),not null
+2,system_unit_id,integer,not null
+3,transaction_id,varchar(18),not null
+4,american_european_ind,char(1),null
+5,branch,smallint,null
+6,buy_sell_ind,char(1),null
+7,citicorp_unit_gfcid,numeric(10,0),null
+8,cmtm_ccy,char(3),null
+9,early_termination,char(3),null
+10,early_termination_date,datetime,null
+11,expiry_date,datetime,null
+12,fail_ind,char(1),null
+13,gfcid,numeric(10,0),null
+14,handoff_source_id,integer,not null
+15,host_citicorp_unit,varchar(12),null
+16,host_client_id,numeric(12,0),null
+17,instrument,integer,null
+18,market_value_ccy,char(3),null
+19,maturity_date,datetime,null
+20,mult_term_flag,char(1),null
+21,no_of_legs,smallint,null
+22,no_settlement_risk,char(1),null
+23,number_of_principals,smallint,null
+24,number_of_units,float,null
+25,notification_days,smallint,null
+26,org_unit,char(6),null
+27,physical_cash_ind,char(1),null
+28,premium_ccy,char(3),null
+29,professional_price_rate,float,null
+30,portfolio,varchar(8),null
+31,option_put_call_ind,char(1),null
+32,salesperson_id,char(6),null
+33,settlement_date,datetime,null
+34,spot_forward_ind,char(1),null
+35,start_date,datetime,null
+36,sub_instrument,integer,null
+37,option_strike_price,float,null
+38,trade_date,datetime,null
+39,trader_id,char(6),null
+40,trader_originator,varchar(12),null
+41,underlying_start_date,datetime,null
+42,underlying_maturity_date,datetime,null
+43,volatility_index_basket,char(20),null
+44,deleted,varchar(1),null
+45,account_class,varchar(6),null
+46,account_id,varchar(12),null
+47,account_name,varchar(40),null
+48,delta,float,null
+49,gamma,float,null
+50,host_instrument,varchar(16),null
+51,primary_sys_id,int,null
+52,primary_trans_id,varchar(18),null
+53,reset_period,int,null
+54,default_swap_ref_entity,varchar(30),null
+55,default_swap_spread_curve_id,varchar(14),null
+56,default_swap_ref_cusip,varchar(13),null
+57,barrier_up_down_ind,char(1),null
+58,barrier_in_out_ind,char(1),null
+59,barrier_option,float,null
+60,init_margin_reqmt,float,null
+61,init_margin_reqmt_ccy,char(3),null
+62,deferred_prem_ind,char(1),null
+63,netting_agrmt_id,integer,null
+64,margin_agrmt_id,integer,null
+65,particpt_assignment_ind,varchar(1),null
+66,funded_unfunded_ind,varchar(1),null
+67,revolver_term_loan_ind,varchar(12),null
+68,cusip,varchar(9),null
+69,cusip_description,varchar(40),null
+70,settlement_ind,char(1),null
+71,price_conversion,float,null
+72,comsys_deal_type,varchar(32),null
+73,system_ref_id,char(16),null
+74,reference_deriv,char(1),not null
+75,protection,char(1),null
+76,sequence_number,int,null
+77,upi,varchar(76),null
+78,implied_volatility,float,null
+79,ticker,varchar(16),null
+80,curve_id,varchar(16),null
+81,cds_type,char(3),null
+82,cds_netting_id,varchar(16),null
+83,var_eligible_indicator,char(1),null
+84,document_status,char(1),null
+85,next_call_put_cancel_date,datetime,null
+86,next_payment_date,datetime,null
+87,purpose_of_position,char(3),null
+88,delivery_location,varchar(66),null
+89,relationship_ind,char(2),null
+90,barrier_type,varchar(1),null
+91,barrier_2_up_down_ind,varchar(1),null
+92,barrier_2_in_out_ind,varchar(1),null
+93,barrier_2_option,float,null
+94,barrier_2_type,varchar(1),null
+95,trader_soeid,varchar(7),null
+96,end_date,datetime,null
+97,apar,varchar(18),null
+98,cpty_mnemonic,varchar(10),null
+99,cpty_mnemonic_ind,char(1),null
+100,firm_business_unit_desc,varchar(64),null
+101,cpty_business_unit_desc,varchar(64),null
+102,barrier_strike_1_ccy_1,varchar(3),null
+103,barrier_strike_1_ccy_2,varchar(3),null
+104,strike_price_2,float,null
+105,barrier_strike_2_ccy_1,varchar(3),null
+106,barrier_strike_2_ccy_2,varchar(3),null
+107,pf_total_equity,float,null
+108,pf_total_equity_ccy,varchar(3),null
+109,facility_id,numeric(12,0),null
+110,sub_limit_id,smallint,null
+111,external_match_id,varchar(16),null
+112,group_id,varchar(16),null
+113,premium_amount,float,null
+114,premium_date,datetime,null
+115,unwind_date,datetime,null
+116,unwind_ind,char(1),default 'n'
+117,attachment_point,float,null
+118,detachment_point,float,null
+119,strategy_code,varchar(5),null
+120,strategy_name,varchar(60),null
+121,bond_swap_leverage,float,null
+122,dividend_yield,float,null
+123,underlying_issuer_name,varchar(50),null
+124,ticket_id,integer,null
+125,delta_equivalent_notional,float,null
+126,desk_code,varchar(60),null
+127,source_sys_swwr_ind,varchar(1),null
+128,red_id,varchar(13),null
+129,recovery_rate,float,null
+130,firm_role_id,smallint,null
+131,edealer_id,varchar(15),null
+132,gmi_account_id,varchar(18),null
+133,clearing_house,varchar(12),null
+134,unique_trade_id,varchar(50),null
+135,desk_name_id,smallint,null
+
+
+##END!!
+
+SELECT 
+country , 
+system_unit_id , 
+transaction_id , 
+american_european_ind , 
+branch , 
+buy_sell_ind , 
+citicorp_unit_gfcid , 
+cmtm_ccy , 
+early_termination , 
+early_termination_date , 
+expiry_date , 
+fail_ind , 
+gfcid , 
+handoff_source_id , 
+host_citicorp_unit , 
+host_client_id , 
+instrument , 
+market_value_ccy , 
+maturity_date , 
+mult_term_flag , 
+no_of_legs , 
+no_settlement_risk , 
+number_of_principals , 
+number_of_units , 
+notification_days , 
+org_unit , 
+physical_cash_ind , 
+premium_ccy , 
+professional_price_rate , 
+portfolio , 
+option_put_call_ind , 
+salesperson_id , 
+settlement_date , 
+spot_forward_ind , 
+start_date , 
+sub_instrument , 
+option_strike_price , 
+trade_date , 
+trader_id , 
+trader_originator , 
+underlying_start_date , 
+underlying_maturity_date , 
+volatility_index_basket , 
+deleted , 
+account_class , 
+account_id , 
+account_name , 
+delta , 
+gamma , 
+host_instrument , 
+primary_sys_id , 
+primary_trans_id , 
+reset_period , 
+default_swap_ref_entity , 
+default_swap_spread_curve_id , 
+default_swap_ref_cusip , 
+barrier_up_down_ind , 
+barrier_in_out_ind , 
+barrier_option , 
+init_margin_reqmt , 
+init_margin_reqmt_ccy , 
+deferred_prem_ind , 
+netting_agrmt_id , 
+margin_agrmt_id , 
+particpt_assignment_ind , 
+funded_unfunded_ind , 
+revolver_term_loan_ind , 
+cusip , 
+cusip_description , 
+settlement_ind , 
+price_conversion , 
+comsys_deal_type , 
+system_ref_id , 
+reference_deriv , 
+protection , 
+sequence_number , 
+upi , 
+implied_volatility , 
+ticker , 
+curve_id , 
+cds_type , 
+cds_netting_id , 
+var_eligible_indicator , 
+document_status , 
+next_call_put_cancel_date , 
+next_payment_date , 
+purpose_of_position , 
+delivery_location , 
+relationship_ind , 
+barrier_type , 
+barrier_2_up_down_ind , 
+barrier_2_in_out_ind , 
+barrier_2_option , 
+barrier_2_type , 
+trader_soeid , 
+end_date , 
+apar , 
+cpty_mnemonic , 
+cpty_mnemonic_ind , 
+firm_business_unit_desc , 
+cpty_business_unit_desc , 
+barrier_strike_1_ccy_1 , 
+barrier_strike_1_ccy_2 , 
+strike_price_2 , 
+barrier_strike_2_ccy_1 , 
+barrier_strike_2_ccy_2 , 
+pf_total_equity , 
+pf_total_equity_ccy , 
+facility_id , 
+sub_limit_id , 
+external_match_id , 
+group_id , 
+premium_amount , 
+premium_date , 
+unwind_date , 
+unwind_ind , 
+attachment_point , 
+detachment_point , 
+strategy_code , 
+strategy_name , 
+bond_swap_leverage , 
+dividend_yield , 
+underlying_issuer_name , 
+ticket_id , 
+delta_equivalent_notional , 
+desk_code , 
+source_sys_swwr_ind , 
+red_id , 
+recovery_rate , 
+firm_role_id , 
+edealer_id , 
+gmi_account_id , 
+clearing_house , 
+unique_trade_id , 
+desk_name_id
+FROM eur_transactions
+WHERE deleted IS NULL  
+AND handoff_source_id IN (${handoff_source_id})
+
+##END!!

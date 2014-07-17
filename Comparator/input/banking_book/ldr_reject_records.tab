@@ -1,0 +1,36 @@
+1,handoff_source_id,int,not null
+2,host_system_id,int,not null
+3,transaction_id,varchar(20),not null
+4,record_type,char(2),not null
+5,reason,int,not null,
+6,cob_dt,datetime,not null
+7,reject_dt,datetime,not null
+8,portfolio_1,varchar(8),null
+9,product_code_1,varchar(16),null
+10,notional_1,varchar(18),null
+11,notional_2,varchar(18),null
+12,ccy_1,char(3),null
+13,ccy_2,char(3),null
+14,gfcid,numeric(10,0),null
+15,message,varchar(255),null
+##END!!
+
+SELECT
+handoff_source_id,
+host_system_id,
+transaction_id,
+record_type,
+reason,
+cob_dt,
+reject_dt,
+portfolio_1,
+product_code_1,
+notional_1,
+notional_2,
+ccy_1,
+ccy_2,
+gfcid,
+message
+FROM ldr_reject_records WHERE handoff_source_id IN (${handoff_source_id})
+
+##END!!

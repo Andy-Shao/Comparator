@@ -1,0 +1,62 @@
+1,host_system_id,int,not null
+2,transaction_id,varchar(18),not null
+3,a,float,null
+4,b,float,null
+5,c,float,null
+6,tenr_under_const,int,null
+7,tenr_contr_const,int,null
+8,tenr_under_date,datetime,null
+9,tenr_contr_date,datetime,null
+10,crf,float,null
+11,cmtm_override,float,null
+12,add_cmtm_adjust,float,null
+13,percent_cmtm_adjust,float,null
+14,mliv,float,null
+15,psr,float,null
+16,amount,float,null
+17,minimum,float,null
+18,crf_id,varchar(20),null
+19,comments,varchar(255),null
+20,cefe_update_user_id,smallint,null
+21,cefe_update_date,datetime,null
+22,mandatory_crf,char(1),null
+23,psle_mliv,float,null
+24,psle,float,null
+25,risk_hedge,char(1),not null
+
+##END!!
+
+SELECT 
+host_system_id , 
+transaction_id , 
+a , 
+b , 
+c , 
+tenr_under_const , 
+tenr_contr_const , 
+tenr_under_date , 
+tenr_contr_date , 
+crf , 
+cmtm_override , 
+add_cmtm_adjust , 
+percent_cmtm_adjust , 
+mliv , 
+psr , 
+amount , 
+minimum , 
+crf_id , 
+comments , 
+cefe_update_user_id , 
+cefe_update_date , 
+mandatory_crf , 
+psle_mliv , 
+psle , 
+risk_hedge
+FROM special_crfs
+WHERE transaction_id IN (
+        SELECT transaction_id
+        FROM eur_transactions
+        WHERE handoff_source_id IN (${handoff_source_id})
+)
+
+##END!!

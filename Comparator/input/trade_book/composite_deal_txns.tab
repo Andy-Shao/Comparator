@@ -1,0 +1,53 @@
+1,cd_transaction_id,varchar(18),not null
+2,host_system_id,int,not null
+3,transaction_id,varchar(18),not null
+4,handoff_source_id,int,null
+5,a,float,null
+6,b,float,null
+7,c,float,null
+8,minimum,float,null
+9,tenr_under_const,int,null
+10,tenr_contr_const,int,null
+11,tenr_under_date,datetime,null
+12,tenr_contr_date,datetime,null
+13,crf,float,null
+14,cmtm,float,null
+15,mliv,float,null
+16,psr,float,null
+17,amount,float,null
+18,status,char(1),not null
+19,psle_mliv,float,null
+20,psle,float,null
+
+##END!!
+
+SELECT 
+C.cd_transaction_id , 
+C.host_system_id , 
+C.transaction_id , 
+C.handoff_source_id , 
+C.a , 
+C.b , 
+C.c , 
+C.minimum , 
+C.tenr_under_const , 
+C.tenr_contr_const , 
+C.tenr_under_date , 
+C.tenr_contr_date , 
+C.crf , 
+C.cmtm , 
+C.mliv , 
+C.psr , 
+C.amount , 
+C.status , 
+C.psle_mliv , 
+C.psle
+FROM  eur_transactions A,
+composite_deals B,
+composite_deal_txns C
+WHERE A.TRANSACTION_ID  = B.CD_TRANSACTION_ID
+AND B.CD_TRANSACTION_ID = C.CD_TRANSACTION_ID
+AND B.host_system_id    = C.cd_host_system_id
+AND A.HANDOFF_SRC_ID IN (${handoff_source_id})
+
+##END!!

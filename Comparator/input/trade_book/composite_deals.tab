@@ -1,0 +1,32 @@
+1,cd_host_system_id,int,not null
+2,cd_transaction_id,varchar(18),not null
+3,cd_deal_type,char(1),not null
+4,cd_status,char(1),not null
+5,settle_net,char(1),not null
+6,crf_id,varchar(20),null
+7,local_ref,varchar(20),null
+8,comments,varchar(255),null
+9,source,char(1),null
+10,cefe_update_user_id,smallint,null
+11,cefe_update_date,datetime,null
+
+##END!!
+
+SELECT 
+B.cd_host_system_id , 
+B.cd_transaction_id , 
+B.cd_deal_type , 
+B.cd_status , 
+B.settle_net , 
+B.crf_id , 
+B.local_ref , 
+B.comments , 
+B.source , 
+B.cefe_update_user_id , 
+B.cefe_update_date
+FROM eur_transactions A,
+composite_deals B
+WHERE A.transaction_id = B.cd_transaction_id
+AND A.handoff_source_id IN (${handoff_source_id})
+
+##END!!

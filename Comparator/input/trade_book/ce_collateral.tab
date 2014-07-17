@@ -1,0 +1,69 @@
+1,country,char(2),not null
+2,host_system_id,int,not null
+3,transaction_id,varchar(18),not null
+4,handoff_source_id,int,not null
+5,accrued_interest,float,null
+6,ccy_code,char(3),null
+7,citicorp_unit_gfcid,numeric(10,0),null
+8,cusip_desc,varchar(30),null
+9,cusip_number,varchar(12),null
+10,fail_ind,char(1),null
+11,gfcid,numeric(10,0),null
+12,haircut,float,null
+13,maturity_date,datetime,null
+14,nominal_amount,float,null
+15,portfolio,varchar(8),null
+16,reason_code,varchar(16),null
+17,sub_instrument,int,null
+18,cmtm,float,null
+19,reval_price,float,null
+20,reason_code_2,varchar(16),null
+21,cefe_collateral_id,float,null
+22,account_id,varchar(12),null
+23,host_client_id,numeric(12,0),null
+24,branch,varchar(12),null
+25,im_vm_flag,varchar(2),null
+26,oasys_netting_agrmt_status,varchar(2),null
+27,oasys_margin_agrmt_status,varchar(2),null
+28,isin,varchar(12),null
+29,coll_at_custodian,char(1),null
+30,gmi_account_id,varchar(18),null
+31,illiquid_security_ind,varchar(1),null
+
+##END!!
+
+SELECT 
+country , 
+host_system_id , 
+transaction_id , 
+handoff_source_id , 
+accrued_interest , 
+ccy_code , 
+citicorp_unit_gfcid , 
+cusip_desc , 
+cusip_number , 
+fail_ind , 
+gfcid , 
+haircut , 
+maturity_date , 
+nominal_amount , 
+portfolio , 
+reason_code , 
+sub_instrument , 
+cmtm , 
+reval_price , 
+reason_code_2 , 
+cefe_collateral_id , 
+account_id , 
+host_client_id , 
+branch , 
+im_vm_flag , 
+oasys_netting_agrmt_status , 
+oasys_margin_agrmt_status , 
+isin , 
+coll_at_custodian , 
+gmi_account_id,
+illiquid_security_ind 
+FROM ce_collateral
+WHERE handoff_source_id IN (${handoff_source_id})
+##END!!

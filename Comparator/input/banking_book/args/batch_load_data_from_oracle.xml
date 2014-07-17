@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+			                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	    <util:map id="filePathes" key-type="java.lang.String" value-type="java.lang.String">
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_GENERAL_TRANS.sql"        value="${BANKING_BOOK_OUTPUT}/general_trans_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_ACCOUNT_BALANCES.sql"     value="${BANKING_BOOK_OUTPUT}/account_balances_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_ACCOUNTS.sql"             value="${BANKING_BOOK_OUTPUT}/accounts_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_LEG_DAILY_BAL.sql"        value="${BANKING_BOOK_OUTPUT}/leg_daily_bal_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_LEG_NOMINALS.sql"         value="${BANKING_BOOK_OUTPUT}/leg_nominals_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_LEGS.sql"                 value="${BANKING_BOOK_OUTPUT}/legs_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_BB_TXN_TRANSACTIONS.sql"         value="${BANKING_BOOK_OUTPUT}/transactions_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_DERIV_HANDOFF_STATUS.sql"        value="${BANKING_BOOK_OUTPUT}/handoff_status_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_DERIV_REJECT_RECORDS.sql"        value="${BANKING_BOOK_OUTPUT}/reject_records_oracle.csv"/>
+	       <entry key="${BANKING_BOOK_INPUT}/TRNX_DERIV_EXCLUDE_RECORDS.sql"       value="${BANKING_BOOK_OUTPUT}/exclude_records_oracle.csv"/>
+	    </util:map>
+</beans>
