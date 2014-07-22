@@ -4,6 +4,8 @@ import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
 
+import andy.shao.convert.Convert;
+
 /**
  * Some tools of {@link Array}<br>
  * <p style="color:orange;">

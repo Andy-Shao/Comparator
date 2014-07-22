@@ -2,7 +2,7 @@ package comparator.analyse;
 
 import java.util.Map;
 
-import andy.shao.util.Convert;
+import andy.shao.convert.Convert;
 
 public enum ElementKey {
 	OUTPUT_PATH;

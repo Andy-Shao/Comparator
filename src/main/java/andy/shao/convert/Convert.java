@@ -1,4 +1,6 @@
-package andy.shao.util;
+package andy.shao.convert;
+
+import andy.shao.util.Objects;
 
 public interface Convert<IN, OUT> {
 	OUT convert(IN in);
