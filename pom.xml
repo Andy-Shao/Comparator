@@ -9,7 +9,7 @@
 		<junit-version>4.10</junit-version>
 		<spring-version>3.0.5.RELEASE</spring-version>
 		<log4j-version>1.2.17</log4j-version>
-		<oracle-jdbc-version>10.2.0.4</oracle-jdbc-version>
+		<oracle-jdbc-version>10.2.0.4.0</oracle-jdbc-version>
 		<sybase-jdbc-version>6.05</sybase-jdbc-version>
 		<commons-dbcp-version>1.4</commons-dbcp-version>
 		<mybatis-spring-version>1.0.0-RC3</mybatis-spring-version>
